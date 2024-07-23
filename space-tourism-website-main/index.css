@@ -1,0 +1,296 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap');
+*, *>* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: "Noto Serif", serif;
+}
+body {
+    min-height: 100vh;
+    overflow-x: hidden;
+    background-image: url(./assets/home/background-home-desktop.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.appWrapper {
+    width: 100%;
+}
+/* Navigation */
+.navigation_container {
+    width: inherit;
+    margin: 20px 0 110px 0;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+.navigation_container button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+.navigation_container button img {
+    padding-left: 20px;
+}
+.links-list {
+    width: 55%;
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    background-color: rgba(255, 255, 255, 0.1);
+    position: relative;
+}
+.links-list li {
+    padding: 20px 2px;
+}
+.links-list li.selected {
+    border-bottom: 2px solid white;
+}
+.links-list li:hover {
+    background-color: rgba(255, 255, 255, 0.3);;
+}
+.links-list li a {
+    color: rgba(255, 255, 255, 0.85);
+    text-transform: uppercase;
+    text-decoration: none;
+}
+.links-list li a span {
+    display: inline;
+    font-weight: bold;
+    color: rgb(255, 255, 255);;
+}
+.links-list::before {
+    position: absolute;
+    top: 50%;
+    right: 97.5%;
+    content: "";
+    width: 30%;
+    height: 2px;
+    background-color: rgba(255, 255, 255, 0.3);
+}
+.side_menu {
+    display: none;
+}
+.bars-btn {
+    width: 50px;
+    margin-right: 20px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+.bars-btn img {
+    width: 100%;
+    height: auto;
+}
+.dropdown {
+    display: none;
+    position: fixed; 
+    top: 0;
+    right: 0;
+    width: 60%;
+    height: 100%;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.95);
+    z-index: 999;
+}
+.btn_container {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 50px;
+}
+.close-btn {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+.dropdown-list {
+    list-style-type: none;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+.dropdown-list li {
+    padding: 20px;
+    position: relative;
+    border: 1px solid transparent;
+}
+.dropdown-list li:hover  {
+    border: 1px solid rgb(255, 255, 255);
+    background-color: rgba(255, 255, 255, 0.1);
+}
+.dropdown-list .selected {
+    border: 2px solid rgb(255, 255, 255) !important;
+}
+.dropdown-list li a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+
+/* Main Container */
+.main_container {
+    width: inherit;
+    display: flex;
+    flex-flow: row nowrap;
+    padding-bottom: 65px;
+}
+.main_container div {
+    width: 50%;
+}
+.left_section {
+    padding-inline: 10% 5%;
+}
+.left_section h1 {
+   color: white;
+   text-transform: uppercase;
+   font-size: 90px;
+   font-weight: 600;
+}
+.left_section span {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 25px;
+    text-transform: uppercase;
+}
+.left_section p {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 16px;
+    line-height: 1.7rem;
+    margin-top: 20px;
+}
+.right_section {
+    display: flex;
+    justify-content: center;
+    align-items:last baseline;
+}
+.right_section p {
+    transform: translateX(20px);
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+    font-size: 30px;
+    font-weight: 400;
+    padding: 70px;
+    border-radius: 100%;
+    color: rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
+    transition: transform .4s ease-in;
+}
+.right_section p:hover {
+    transform: scale(1.1);
+}
+
+@media (max-width:870px) {
+    body {
+        background-image: url(./assets/home/background-home-tablet.jpg);
+        background-position: center;
+    }
+    .navigation_container {
+        margin-block: 0 60px;
+    }
+    .links-list {
+        width: 62.5%;
+    }
+    .links-list::before {
+        display: none;
+    }
+    .links-list li {
+        padding-block: 30px;
+    }
+    .links-list li a span {
+        display: none;
+    }
+    .main_container {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        gap: 2rem;    
+    }
+    .main_container div {
+        margin: 0 auto;
+        padding: 0;
+    }
+    .right_section{
+        display: flex;
+        align-items: center;
+        transform: translateX(-20px);
+    }
+}
+@media (max-width:670px) {
+    .body {
+        background-image: url(./assets/home/background-home-mobile.jpg);
+    }
+    .navigation_container {
+        margin-block: 20px 60px;
+    }
+    .links-list {
+        display: none;
+    }
+    .side_menu {
+        display: inline-block;
+    }
+    .left_section {
+        min-width: 100%;
+        padding-inline: 5% !important;
+    }
+}
+
+
+
+@keyframes shadow {
+    from {
+        text-shadow: 1px 2px 3px rgb(0, 255, 255);
+    }
+    to {
+        color: cyan;
+        text-shadow: 1px 2px 15px rgb(0, 255, 255);
+    }
+}
+*::selection {
+    background-color: white;
+    color: black;
+}
+.author {
+    text-align: center;
+    font-size: 25px;
+    color: rgb(255, 255, 255);
+    text-shadow: 1px 2px 3px rgb(0, 255, 255);
+    margin-bottom: 20px;
+}
+.author > * {
+    width: 100%;
+}
+.author a {
+    color: rgb(255, 255, 255);;
+    font-size: 35px;
+    margin-left: 5px;
+}
+.author a:hover {
+    animation: shadow 1s linear infinite alternate;
+}
+.instagram_link {
+   margin-top: 40px;
+}
+.instagram_link svg {
+    max-width: 40px !important; 
+    fill: rgb(255, 255, 255); 
+    
+}
+.instagram_link:hover svg {
+    animation: color 1s linear infinite alternate;
+}
+
+@keyframes color {
+    from {
+        fill: rgb(255, 255, 255);
+    }
+    to {
+        fill: rgb(255, 68, 99);
+    }
+}

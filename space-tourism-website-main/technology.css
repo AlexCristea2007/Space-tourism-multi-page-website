@@ -1,0 +1,291 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap');
+*, *>* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: "Noto Serif", serif;
+}
+body {
+    min-height: 100vh;
+    overflow-x: hidden;
+    background-image: url(./assets/technology/background-technology-desktop.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.appWrapper {
+    width: 100%;
+}
+
+/* Navigation */
+.navigation_container {
+    width: inherit;
+    margin: 20px 0 75px 0;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+.navigation_container img {
+    padding-left: 20px;
+}
+.links-list {
+    width: 55%;
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    background-color: rgba(255, 255, 255, 0.1);
+    position: relative;
+}
+.links-list li {
+    padding: 20px 2px;
+}
+.links-list .selected {
+    border-bottom: 2px solid white;
+}
+.links-list li:hover {
+    background-color: rgba(255, 255, 255, 0.3);;
+}
+.links-list li a {
+    color: rgba(255, 255, 255, 0.85);
+    text-transform: uppercase;
+    text-decoration: none;
+}
+.links-list li a span {
+    display: inline;
+    font-weight: bold;
+    color: rgb(255, 255, 255);;
+}
+.links-list::before {
+    position: absolute;
+    top: 50%;
+    right: 97.5%;
+    content: "";
+    width: 30%;
+    height: 2px;
+    background-color: rgba(255, 255, 255, 0.3);
+}
+.side_menu {
+    display: none;
+}
+.bars-btn {
+    width: 50px;
+    margin-right: 20px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+.bars-btn img {
+    width: 100%;
+    height: auto;
+}
+.dropdown {
+    display: none;
+    position: fixed; 
+    top: 0;
+    right: 0;
+    width: 60%;
+    height: 100%;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.95);
+    z-index: 999;
+}
+.btn_container {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 50px;
+}
+.close-btn {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+.dropdown-list {
+    list-style-type: none;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+.dropdown-list li {
+    padding: 20px;
+    position: relative;
+    border: 1px solid transparent;
+}
+.dropdown-list li:hover  {
+    border: 1px solid rgb(255, 255, 255);
+    background-color: rgba(255, 255, 255, 0.1);
+}
+.dropdown-list .selected {
+    border: 2px solid rgb(255, 255, 255) !important;
+}
+.dropdown-list li a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    text-transform: uppercase;
+}
+.title {
+    text-transform: uppercase;
+    letter-spacing: 0.18rem;
+    color: rgb(255, 255, 255);
+    font-size: 25px;
+    font-weight: 400;
+    padding-left: 5%;
+    margin-bottom: 70px;
+}
+.title span {
+    margin-right: 15px;
+    color: rgb(129, 129, 129);
+    font-weight: bold;
+}
+
+/* Main Container */
+.main_container {
+    width: inherit;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    padding-left: 5%;
+    padding-bottom: 50px;
+}
+.btns_list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+.btns_list a {
+    text-decoration: none;
+    padding: 20px 25px;
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: 50%;
+    color: rgb(255, 255, 255);
+    background-color: transparent;
+    font-size: 25px;
+    font-weight: 400;
+}
+.btns_list .selected {
+    color: rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
+}
+.text_section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+    padding-inline: 3.5%;
+}
+.text_section span {
+    text-transform: uppercase;
+    font-size: 20px;
+    color: rgba(255, 255, 255, 0.8);
+}
+.text_section h2 {
+   text-transform: uppercase;
+   font-size: 50px;
+   font-weight: 400;
+   color: rgb(255, 255, 255)
+}
+.text_section p {
+    font-size: 15px;
+    line-height: 1.7rem;
+    color: rgba(255, 255, 255, 0.8);
+}
+.image_section {
+    min-width: 40%;
+    height: 500px;
+}
+.image_section img {
+    min-width: 100%;
+    min-height: 100%;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+}
+.image_section img:nth-of-type(1) {
+    display: inline-block;
+}
+.image_section img:nth-of-type(2) {
+    display: none;
+}
+
+/* Medias */
+@media (max-width:870px) {
+    body {
+        background-image: url(./assets/technology/background-technology-tablet.jpg);
+        background-position: center;
+    }
+    .navigation_container {
+        margin-block: 0 60px;
+    }
+    .links-list {
+        width: 62.5%;
+    }
+    .links-list::before {
+        display: none;
+    }
+    .links-list li {
+        padding-block: 30px;
+    }
+    .links-list li a span {
+        display: none;
+    }
+    .main_container {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+    .btns_list {
+        order: 2;
+        display: flex;
+        flex-flow: row nowrap;
+        margin-bottom: 30px;
+    }
+    .text_section {
+        order: 1;
+    }
+    .text_section p {
+        text-align: center;
+        padding: 5%;
+    }
+    .image_section {
+        order: 3;
+        display: block;
+        width: 90%;
+        height: auto;
+        margin: 0 auto;
+    }
+    .image_section img:nth-of-type(1) {
+        display: none;
+    }
+    .image_section img:nth-of-type(2) {
+        display: inline-block;
+    }
+}
+@media (max-width:670px) {
+    .body {
+        background-image: url(./assets/technology/background-technology-mobile.jpg);
+    }
+    .navigation_container {
+        margin-block: 20px 60px;
+    }
+    .links-list {
+        display: none;
+    }
+    .side_menu {
+        display: inline-block;
+    }
+    .text_section {
+        text-align: center;
+    }
+}
+*::selection {
+    background-color: white;
+    color: black;
+}
